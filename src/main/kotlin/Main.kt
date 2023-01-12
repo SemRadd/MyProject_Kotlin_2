@@ -120,6 +120,6 @@ fun main(args: Array<String>) {
     var choice = product.get(0)
     var maney = readLine()!!.toInt()
     if (choice==true){
-        if ()
+        println()
     }
 }
