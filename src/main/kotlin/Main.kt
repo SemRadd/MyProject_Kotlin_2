@@ -1,5 +1,5 @@
 fun main(args: Array<String>) {
-/*
+
 /* Условные операторы:
  1. Пользователь вводит в консоли число. Если оно больше 10, выдаем в консоли сообщение
 “Число больше десяти”, если меньше – “Число меньше десяти”*/
@@ -92,34 +92,64 @@ fun main(args: Array<String>) {
 
 
     print("Введите число: ")
-    var num = readLine()!!.toInt()
+    var number = readLine()!!.toInt()
 
     if (num % 2 == 0)
         println("$num четное число")
     else
         println("$num нечетное число")
-*/
-/*8. Программа “Магазин”, выводим меню из трех товаров с ценами. Пользователь выбирает
+
+/*8. Программа “Магазин”, выводит меню из трех товаров с ценами. Пользователь выбирает
 товар, вводит сумму денег. Если сумма меньше цены, выводим сообщение: “Денег не
 хватает!”, если сумма равна цене – “Спасибо за покупку!”, если больше – “Ваша сдача:
 [сумма сдачи]”*/
-    /*println("Цена продукта на первый, второй и третьий продукты:")
-    var product_1 = readLine()!!.toInt()
-    var product_2 = readLine()!!.toInt()
-    var product_3 = readLine()!!.toInt()
-    println("Цена первого продукта $product_1 руб")
-    println("Цена второго продукта $product_2 руб")
-    println("Цена третьего продукта $product_3 руб")*/
 
-    var price = intArrayOf(100, 50, 10)
-    var namber_1 = price[0]
-    var namber_2 = price[1]
-    var nambe_3 = price[2]
-    var product = listOf("Цена первого продукта: $namber_1", "Цена второго продукта: $namber_2", "Цена третьего продукта: nambe_3")
-    println(product)
-    var choice = product.get(0)
-    var maney = readLine()!!.toInt()
-    if (choice==true){
-        println()
+    val price_1 = 100
+    val price_2 = 50
+    val price_3 = 10
+    println("0. Цена на первый продукт: $price_1 руб")
+    println("1. Цена на первый продукт: $price_2 руб")
+    println("2. Цена на первый продукт: $price_3 руб")
+    print("Выберете продукт: ")
+    val catalog = intArrayOf(price_1, price_2, price_3)
+    val choice = readLine()!!.toInt()
+    when (choice) {
+        0 -> if (choice==0) {
+            print("Введите сумму денег: ")
+            val money = readLine()!!.toInt()
+            if (money<price_1) {
+                println("Денег не хватит")
+            } else if (money==price_1) {
+                println("Спасибо за покупку!")
+            } else if (money>price_1) {
+                val change_1 = money-price_1
+                println("Ваша сдача: $change_1")
+            }
+        }
+        1 -> if (choice==1) {
+            print("Введите сумму денег: ")
+            val money = readLine()!!.toInt()
+            if (money<price_2) {
+                println("Денег не хватит")
+            } else if (money==price_2) {
+                println("Спасибо за покупку!")
+            } else if (money>price_2) {
+                val change_2 = money-price_2
+                println("Ваша сдача: $change_2")
+            }
+        }
+        2 -> if (choice==2) {
+            print("Введите сумму денег: ")
+            val money = readLine()!!.toInt()
+            if (money<price_3) {
+                println("Денег не хватит")
+            } else if (money==price_3) {
+                println("Спасибо за покупку!")
+            } else if (money>price_3) {
+                val change_3 = money-price_3
+                println("Ваша сдача: $change_3")
+            }
+        }
     }
+
 }
